@@ -1,0 +1,12 @@
+.Home {
+	text-align: center;
+	min-height: 95vh;
+}
+
+.Home-header {
+	text-align: center;
+	padding: 10px;
+	background-color: #0a6671;
+	overflow: hidden;
+	color: white;
+}

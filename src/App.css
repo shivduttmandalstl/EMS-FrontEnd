@@ -1,0 +1,13 @@
+.App {
+	min-height: 95vh;
+	
+}
+
+.App-footer {
+	text-align: center;
+	font-size: medium;
+	color: gray;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}
