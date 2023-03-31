@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { VerificationEmployee } from "./VerificationEmployee";
 import { EmployeeNavBar } from "./EmployeeNavBar";
-import dateFormat from "dateformat";
+import moment from "moment/moment";
 
 export const ViewLeaves = () => {
 	const defaultLeave = {
@@ -83,8 +83,8 @@ export const ViewLeaves = () => {
 									from = "";
 									to = "";
 								} else {
-									from = dateFormat(data.fromDate, "dS mmmm yyyy");
-									to = dateFormat(data.toDate, "dS mmmm yyyy");
+									from = moment(data.fromDate).format("Do MMMM YYYY");
+									to = moment(data.toDate).format("Do MMMM YYYY");
 								}
 								if (data.duration === "") {
 									dur = "";

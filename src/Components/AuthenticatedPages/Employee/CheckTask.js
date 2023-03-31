@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { VerificationEmployee } from "./VerificationEmployee";
 import { EmployeeNavBar } from "./EmployeeNavBar";
-import dateFormat from "dateformat";
+import moment from "moment/moment";
 
 export const CheckTask = () => {
 	const verifiedEmp = VerificationEmployee();
@@ -68,7 +68,7 @@ export const CheckTask = () => {
 								if (data.dueDate === "") {
 									due = "";
 								} else {
-									due = dateFormat(data.dueDate, "dS mmmm yyyy");
+									due = moment(data.dueDate).format("Do MMMM YYYY");
 								}
 
 								return (

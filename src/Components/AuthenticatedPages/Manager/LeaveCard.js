@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { isExpired } from "react-jwt";
 import { toast, ToastContainer } from "react-toastify";
-import dateFormat from "dateformat";
+import moment from "moment/moment";
 
 export const LeaveCard = (props) => {
 	const [name, setName] = useState("");
@@ -74,10 +74,11 @@ export const LeaveCard = (props) => {
 						<h5 className="card-title">{name}</h5>
 						<p className="card-text">Email ID: {props.data.email}</p>
 						<p className="card-text">
-							Leave From Date: {dateFormat(props.data.fromDate, "dS mmmm yyyy")}
+							Leave From Date:{" "}
+							{moment(props.data.fromDate).format("Do MMMM YYYY")}
 						</p>
 						<p className="card-text">
-							Leave To Date: {dateFormat(props.data.toDate, "dS mmmm yyyy")}
+							Leave To Date: {moment(props.data.toDate).format("Do MMMM YYYY")}
 						</p>
 						<p className="card-text">Duration: {props.data.duration} Day</p>
 						<p className="card-text">Leave Type: {props.data.leaveType}</p>

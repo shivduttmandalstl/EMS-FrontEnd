@@ -5,8 +5,8 @@ import { isExpired, decodeToken } from "react-jwt";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { VerificationManager } from "./VerificationManager";
-import dateFormat from "dateformat";
 import { Progress } from "./Progress";
+import moment from "moment/moment";
 
 export const CheckProgress = () => {
 	const verifiedMan = VerificationManager();
@@ -70,7 +70,7 @@ export const CheckProgress = () => {
 								if (data.dueDate === "") {
 									due = "";
 								} else {
-									due = dateFormat(data.dueDate, "dS mmmm yyyy");
+									due = moment(data.dueDate).format("Do MMMM YYYY");
 								}
 
 								return (
